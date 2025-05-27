@@ -53,7 +53,7 @@
       </Text>
       <ImageView fx:id="image" fitHeight="74.0" fitWidth="78.0" layoutX="204.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Документы%20D/weather.png" />
+            <Image url="/weather.png" />
          </image>
       </ImageView>
    </children>

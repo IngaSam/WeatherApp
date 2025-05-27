@@ -5,12 +5,17 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.weather.HelloController">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.weather.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+  <!-- <TextField fx:id="city" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0"/>-->
+    <Button fx:id = "getData"  text="Узнать" AnchorPane.topAnchor="60.0" AnchorPane.leftAnchor="20.0" />
+
+    <!--text="Helloотло!" onAction="#onHelloButtonClick"  -->
+</AnchorPane>
