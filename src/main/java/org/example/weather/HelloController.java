@@ -64,11 +64,21 @@ public class HelloController {
        if (getData != null) {
           getData.setOnAction(event -> {
               String getUserCity = city.getText().trim();
+              if (!getUserCity.equals("")) {
+
              String output = getUrlContent("https://api.openweathermap.org/data/2.5/weather?q="+ getUserCity + "&appid=18bdb99f32bdecfefd54e6ed2ba61b67&units=metric&lang=ru");
             // System.out.println(output);
-              if (output.isEmpty()) {
+                  System.out.println("город введен");
+              if (!output.isEmpty()) {
+                  System.out.println("город введен2");
                   JSONObject obj = new JSONObject(output);
+                  temp_info.setText("Температура: "+ obj.getJSONObject("main").getDouble("temp"));
+                  temp_feels.setText("Ощущается: "+ obj.getJSONObject("main").getDouble("feels_like"));
+                  temp_max.setText("Максимум: "+ obj.getJSONObject("main").getDouble("temp_max"));
+                  temp_min.setText("Минимум: "+ obj.getJSONObject("main").getDouble("temp_min"));
+                  pressure.setText("Давление: "+ obj.getJSONObject("main").getDouble("pressure"));
 
+                }
               }
           });
        }else {
