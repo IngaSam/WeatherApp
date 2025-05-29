@@ -23,8 +23,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import org.json.JSONObject;
-//import com.fasterxml.jackson.databind.ObjectMapper;
-//import static com.sun.management.HotSpotDiagnosticMXBean.ThreadDumpFormat.JSON;
+
 
 public class HelloController {
 
@@ -68,9 +67,9 @@ public class HelloController {
 
              String output = getUrlContent("https://api.openweathermap.org/data/2.5/weather?q="+ getUserCity + "&appid=18bdb99f32bdecfefd54e6ed2ba61b67&units=metric&lang=ru");
             // System.out.println(output);
-                  System.out.println("город введен");
+
               if (!output.isEmpty()) {
-                  System.out.println("город введен2");
+
                   JSONObject obj = new JSONObject(output);
                   temp_info.setText("Температура: "+ obj.getJSONObject("main").getDouble("temp"));
                   temp_feels.setText("Ощущается: "+ obj.getJSONObject("main").getDouble("feels_like"));

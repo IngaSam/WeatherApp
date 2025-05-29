@@ -14,7 +14,7 @@ public class HelloApplication extends javafx.application.Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("project1.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 290, 580);
         stage.setTitle("Погода");
-     stage.setScene(scene);
+        stage.setScene(scene);
         stage.setResizable(false); //трансформация окна приложения
         stage.show();
     }
