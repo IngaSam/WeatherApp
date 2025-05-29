@@ -18,11 +18,13 @@ import java.net.URLConnection;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import org.json.JSONObject;
+//import com.fasterxml.jackson.databind.ObjectMapper;
+//import static com.sun.management.HotSpotDiagnosticMXBean.ThreadDumpFormat.JSON;
 
 public class HelloController {
 
@@ -63,7 +65,11 @@ public class HelloController {
           getData.setOnAction(event -> {
               String getUserCity = city.getText().trim();
              String output = getUrlContent("https://api.openweathermap.org/data/2.5/weather?q="+ getUserCity + "&appid=18bdb99f32bdecfefd54e6ed2ba61b67&units=metric&lang=ru");
-             System.out.println(output);
+            // System.out.println(output);
+              if (output.isEmpty()) {
+                  JSONObject obj = new JSONObject(output);
+
+              }
           });
        }else {
           System.out.println("null fxml");
